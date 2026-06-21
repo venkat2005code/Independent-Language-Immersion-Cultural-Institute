@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Verve</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-earth-americas"></i>
+            Verve<span>.</span>
+        </a>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    Homes <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="services.html">Services</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item">
+                    Dashboards <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                    <div class="dropdown-menu">
+                        <a href="dashboard.html" class="dropdown-item">Learner Portal</a>
+                        <a href="admin.html" class="dropdown-item">Admin Portal</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="toggle-btn" id="dir-toggle" title="Toggle RTL/LTR">LTR</button>
+                </li>
+                <li class="nav-item">
+                    <button class="toggle-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </button>
+                </li>
+                <li class="nav-item mobile-auth-btn" style="display: none; width: 100%; margin-top: 1rem; gap: 0.5rem;">
+                    <a href="sign-in.html" class="btn btn-outline" style="width: 100%; text-align: center; justify-content: center;">Sign In</a>
+                    <a href="sign-up.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Apply Now</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="sign-in.html" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Sign In</a>
+            <a href="sign-up.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Apply Now</a>
+            
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero (Layout: Split Vertical Layout) -->
+        <section style="display: flex; flex-direction: column; min-height: 80vh;">
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: var(--bg-primary);">
+                <div style="max-width: 800px;">
+                    <h1 class="hero-title" style="line-height: 1.1; margin-bottom: 1.5rem; font-family: var(--font-heading);">Connecting the World Through Language.</h1>
+                    <p class="hero-subtitle" style="color: var(--text-secondary); margin-bottom: 0;">We believe that language is the ultimate bridge between cultures. Our mission is to foster global understanding through immersive education.</p>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 0 5% 4rem;">
+                <div style="height: 400px; border-radius: 40px; border-color: var(--primary-color); background: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Global Presence (Layout: Stat Banner + Map Placeholder) -->
+        <section class="section" style="background: var(--text-primary); color: var(--bg-primary);">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="color: var(--bg-primary); font-size: 3rem; margin-bottom: 1rem;">Our Global Footprint</h2>
+                <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">With campuses in over 20 countries, Verve is a truly international institution.</p>
+            </div>
+            
+            <div class="interactive-map-container" style="height: 500px; border-radius: 24px; background-color: #1a1114; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; overflow: hidden; position: relative;">
+                <!-- SVG World Map Background -->
+                <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') center/100% 100% no-repeat; opacity: 0.15; filter: invert(1) brightness(1.5);"></div>
+
+                <!-- New York -->
+                <div class="map-pin" style="top: 38%; left: 28%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>New York Campus</h4>
+                        <p>ESL & Business English</p>
+                        <p style="font-weight: bold; margin-top: 5px;">2,400 Students</p>
+                    </div>
+                </div>
+
+                <!-- London -->
+                <div class="map-pin" style="top: 32%; left: 47%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>London Hub</h4>
+                        <p>Global Headquarters</p>
+                        <p style="font-weight: bold; margin-top: 5px;">3,100 Students</p>
+                    </div>
+                </div>
+
+                <!-- Paris -->
+                <div class="map-pin" style="top: 35%; left: 49%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>Paris Campus</h4>
+                        <p>French Immersion</p>
+                        <p style="font-weight: bold; margin-top: 5px;">1,800 Students</p>
+                    </div>
+                </div>
+
+                <!-- Buenos Aires -->
+                <div class="map-pin" style="top: 75%; left: 32%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>Buenos Aires</h4>
+                        <p>Spanish Immersion</p>
+                        <p style="font-weight: bold; margin-top: 5px;">1,200 Students</p>
+                    </div>
+                </div>
+
+                <!-- Beijing -->
+                <div class="map-pin" style="top: 38%; left: 78%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>Beijing Campus</h4>
+                        <p>Mandarin Immersion</p>
+                        <p style="font-weight: bold; margin-top: 5px;">2,100 Students</p>
+                    </div>
+                </div>
+
+                <!-- Tokyo -->
+                <div class="map-pin" style="top: 39%; left: 85%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>Tokyo Campus</h4>
+                        <p>Japanese Immersion</p>
+                        <p style="font-weight: bold; margin-top: 5px;">2,800 Students</p>
+                    </div>
+                </div>
+
+                <!-- Sydney -->
+                <div class="map-pin" style="top: 80%; left: 88%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-dot"></div>
+                    <div class="pin-card">
+                        <h4>Sydney Campus</h4>
+                        <p>Oceania Hub</p>
+                        <p style="font-weight: bold; margin-top: 5px;">1,500 Students</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center;">
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent); font-family: var(--font-heading);">20+</div>
+                    <div style="font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Countries</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent); font-family: var(--font-heading);">50k</div>
+                    <div style="font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Alumni Globally</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent); font-family: var(--font-heading);">15</div>
+                    <div style="font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Languages Taught</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Institute History (Layout: Horizontal Stepper) -->
+        <section class="section">
+            <div class="section-title">
+                <h2>Our Legacy</h2>
+                <p>Over two decades of excellence in linguistic and cultural education.</p>
+            </div>
+            
+            <div style="display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 2rem; padding: 2rem 0; scroll-snap-type: x mandatory;">
+                <!-- Year 1 -->
+                <div style="min-width: 300px; flex: 1; border-left: 4px solid var(--accent); padding-left: 2rem; scroll-snap-align: start;">
+                    <h3 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading);">2005</h3>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">The Foundation</h4>
+                    <p style="color: var(--text-secondary); font-size: 1rem;">Verve was founded in London with a single goal: to disrupt traditional textbook learning by forcing true immersion.</p>
+                </div>
+                <!-- Year 2 -->
+                <div style="min-width: 300px; flex: 1; border-left: 4px solid var(--accent); padding-left: 2rem; scroll-snap-align: start;">
+                    <h3 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading);">2012</h3>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Global Expansion</h4>
+                    <p style="color: var(--text-secondary); font-size: 1rem;">Opened campuses in Tokyo, Madrid, and Paris, establishing our global network of host families and cultural partners.</p>
+                </div>
+                <!-- Year 3 -->
+                <div style="min-width: 300px; flex: 1; border-left: 4px solid var(--accent); padding-left: 2rem; scroll-snap-align: start;">
+                    <h3 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading);">2018</h3>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Corporate Integration</h4>
+                    <p style="color: var(--text-secondary); font-size: 1rem;">Launched our B2B executive coaching arm, partnering with Fortune 500 companies for cross-cultural training.</p>
+                </div>
+                <!-- Year 4 -->
+                <div style="min-width: 300px; flex: 1; border-left: 4px solid var(--accent); padding-left: 2rem; scroll-snap-align: start;">
+                    <h3 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading);">Today</h3>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Digital & Hybrid Future</h4>
+                    <p style="color: var(--text-secondary); font-size: 1rem;">Integrating VR cultural simulations and maintaining our 98% fluency success rate across all our global cohorts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Teaching Methodology (Layout: Accordion-style Text Blocks) -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div style="display: flex; flex-wrap: wrap; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: center;">
+                <div style="flex: 1; min-width: 350px;">
+                    <div style="height: 600px; border-radius: 30px; background: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 350px;">
+                    <h2 style="font-size: 3rem; margin-bottom: 2rem;">The 'No-Textbook' Philosophy</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">We ban native languages in our classrooms. Our proprietary methodology forces cognitive adaptation, mimicking how you learned your first language.</p>
+                    
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between;">Cognitive Surrounding <i class="fa-solid fa-plus" style="color: var(--accent); font-size: 1rem;"></i></h4>
+                    </div>
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between;">Situational Anchoring <i class="fa-solid fa-plus" style="color: var(--accent); font-size: 1rem;"></i></h4>
+                    </div>
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between;">Native Accent Reduction <i class="fa-solid fa-plus" style="color: var(--accent); font-size: 1rem;"></i></h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Leadership Team (Layout: Clean Profile Grid) -->
+        <section class="section">
+            <div class="section-title">
+                <h2>Executive Leadership</h2>
+                <p>Guided by linguists, cultural anthropologists, and seasoned educators.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: center;">
+                <div>
+                    <div style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 1.5rem; padding: 0; background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.2rem;">Dr. Alara Vance</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;">Chief Executive Officer</p>
+                </div>
+                <div>
+                    <div style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 1.5rem; padding: 0; background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.2rem;">Jameson Locke</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;">Head of Global Operations</p>
+                </div>
+                <div>
+                    <div style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 1.5rem; padding: 0; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.2rem;">Dr. Wei Shen</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;">VP of Linguistics</p>
+                </div>
+                <div>
+                    <div style="width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 1.5rem; padding: 0; background: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.2rem;">Maria Rossi</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;">Director of Cultural Affairs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Diversity & Community (Layout: Full-Width Image Banner with Bottom Overlay) -->
+        <section style="position: relative; height: 60vh; display: flex; align-items: flex-end; padding: 0;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <div style="height: 100%; width: 100%; border-radius: 0; border: none; background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
+                </div>
+            </div>
+            
+            <div style="position: relative; z-index: 2; width: 100%; background: linear-gradient(to top, var(--bg-primary) 20%, transparent); padding: 4rem 5% 2rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
+                <div style="max-width: 600px;">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Our Commitment to Diversity</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem;">We allocate 15% of our annual profits to fund language programs in underserved communities, ensuring that global communication is a right, not a privilege.</p>
+                </div>
+                <div>
+                    <a href="contact.html" class="btn btn-primary">Join Our Initiatives</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="padding: 4rem 5% 2rem; background: var(--bg-elevated); border-top: 1px solid var(--border); box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.05); margin-top: auto;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+            
+            <!-- Brand & About -->
+            <div>
+                <a href="index.html" class="logo" style="margin-bottom: 1.5rem; justify-content: flex-start;">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    Verve<span>.</span>
+                </a>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">Empowering global communication through immersive language and cultural education since 2005.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">Quick Links</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">Contact Us</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="mailto:hello@verve-institute.edu" class="footer-contact"><i class="fa-solid fa-envelope" style="color: var(--primary-color); width: 20px;"></i> hello@verve-institute.edu</a></li>
+                    <li><a href="tel:+442079460123" class="footer-contact"><i class="fa-solid fa-phone" style="color: var(--primary-color); width: 20px;"></i> +44 (0) 20 7946 0123</a></li>
+                    <li style="display: flex; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; padding: 0.2rem 0;"><i class="fa-solid fa-location-dot" style="color: var(--primary-color); margin-top: 4px; width: 20px;"></i> 15 Global Heritage Way<br>London, W1J 7BU, UK</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div style="max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Independent Language Immersion & Cultural Institute. All rights reserved.</p>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

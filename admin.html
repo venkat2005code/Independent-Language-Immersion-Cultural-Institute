@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Verve</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="overflow: hidden;">
+    <header class="header">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-earth-americas"></i>
+            Verve<span>.</span>
+        </a>
+
+        <div class="header-actions">
+            <button class="sidebar-hamburger" id="admin-sidebar-toggle" aria-label="Toggle Sidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-right: 1rem;">
+                <div style="position: relative; cursor: pointer;">
+                    <i class="fa-regular fa-bell" style="font-size: 1.3rem; color: var(--text-secondary);"></i>
+                    <span style="position: absolute; top: -5px; right: -5px; background: #ecc94b; width: 10px; height: 10px; border-radius: 50%;"></span>
+                </div>
+                <div style="width: 1px; height: 20px; background: var(--border);"></div>
+                <div style="width: 40px; height: 40px; border-radius: 50%; padding: 0; min-height: unset; border: none; background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                </div>
+                <span style="font-weight: 600; font-size: 0.95rem; color: var(--text-primary);">Super Admin</span>
+            </div>
+            
+            <button class="toggle-btn" id="dir-toggle" title="Toggle RTL/LTR">LTR</button>
+            <button class="toggle-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-target="admin-overview"><i class="fa-solid fa-gauge-high"></i> Dashboard Overview</li>
+                <li class="sidebar-item" data-target="admin-students"><i class="fa-solid fa-users"></i> Student Management</li>
+                <li class="sidebar-item" data-target="admin-instructors"><i class="fa-solid fa-chalkboard-user"></i> Instructor Management</li>
+                <li class="sidebar-item" data-target="admin-courses"><i class="fa-solid fa-book-bookmark"></i> Course Management</li>
+                <li class="sidebar-item" data-target="admin-attendance"><i class="fa-solid fa-calendar-check"></i> Attendance Monitoring</li>
+                <li class="sidebar-item" data-target="admin-homework"><i class="fa-solid fa-file-signature"></i> Homework Review</li>
+                <li class="sidebar-item" data-target="admin-live"><i class="fa-solid fa-video"></i> Live Scheduling</li>
+                <li class="sidebar-item" data-target="admin-events"><i class="fa-solid fa-masks-theater"></i> Cultural Events</li>
+                <li class="sidebar-item" data-target="admin-placement"><i class="fa-solid fa-spell-check"></i> Placement Tests</li>
+                <li class="sidebar-item" data-target="admin-reports"><i class="fa-solid fa-chart-line"></i> Reports & Analytics</li>
+                <li class="sidebar-item" data-target="admin-settings"><i class="fa-solid fa-gear"></i> System Settings</li>
+                <li class="sidebar-item" style="margin-top: 2rem; color: #e53e3e;"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            
+            <!-- SECTION 1: OVERVIEW -->
+            <section id="admin-overview" class="lms-section" style="padding-top: 0;">
+                <div class="dashboard-header">
+                    <div>
+                        <h1 style="margin-bottom: 0.5rem;">Global Admin Dashboard</h1>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">Manage the Verve Global Language Immersion LMS</p>
+                    </div>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Active Students</span>
+                        <span class="stat-value">3,452</span>
+                        <span style="font-size: 0.9rem; color: #48bb78; margin-top: 8px; font-weight: 600;"><i class="fa-solid fa-arrow-up"></i> +12% this month</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Active Instructors</span>
+                        <span class="stat-value">124</span>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Across 15 languages</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Ongoing Classes</span>
+                        <span class="stat-value" style="color: #e53e3e;">14</span>
+                        <span style="font-size: 0.9rem; color: #e53e3e; margin-top: 8px; font-weight: 600;"><i class="fa-solid fa-circle" style="font-size: 0.6rem;"></i> Live right now</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Avg Attendance</span>
+                        <span class="stat-value">91%</span>
+                        <span style="font-size: 0.9rem; color: #ecc94b; margin-top: 8px; font-weight: 600;">Stable</span>
+                    </div>
+                </div>
+
+                <div class="lms-card">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Global Activity Timeline</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: #4299e1;"><i class="fa-solid fa-user-plus"></i></div>
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem; font-size: 1.2rem;">New Corporate Cohort Onboarded</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">45 employees from TechGlobal started Mandarin A1.</p>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">10 minutes ago</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: #48bb78;"><i class="fa-solid fa-file-pdf"></i></div>
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem; font-size: 1.2rem;">Homework Graded Batch</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Prof. Dubois graded 30 submissions for French B2.</p>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">1 hour ago</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: #ecc94b;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem; font-size: 1.2rem;">Server Load Warning</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Digital Classroom server reached 80% capacity.</p>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">2 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: STUDENT MANAGEMENT -->
+            <section id="admin-students" class="lms-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Student Management</h2>
+                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Student</button>
+                </div>
+                
+                <div class="lms-card">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; gap: 1rem;">
+                        <input type="text" placeholder="Search students by name or email..." style="flex: 1; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                        <select style="padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                            <option>Filter by Course</option>
+                            <option>Mandarin</option>
+                            <option>Spanish</option>
+                        </select>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table class="lms-datatable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Course Track</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1044</td>
+                                    <td style="font-weight: 600;">Alexander Chen</td>
+                                    <td>alex.chen@enterprise.com</td>
+                                    <td>Mandarin B1</td>
+                                    <td><span class="lms-badge success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Edit</button>
+                                        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; border-color: #e53e3e; color: #e53e3e;">Ban</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1045</td>
+                                    <td style="font-weight: 600;">Sarah Miller</td>
+                                    <td>sarah.m@gmail.com</td>
+                                    <td>Spanish A2</td>
+                                    <td><span class="lms-badge success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Edit</button>
+                                        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; border-color: #e53e3e; color: #e53e3e;">Ban</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1046</td>
+                                    <td style="font-weight: 600;">David Kim</td>
+                                    <td>david.k@university.edu</td>
+                                    <td>French C1</td>
+                                    <td><span class="lms-badge danger">Inactive</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Edit</button>
+                                        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; border-color: #e53e3e; color: #e53e3e;">Ban</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: INSTRUCTOR MANAGEMENT -->
+            <section id="admin-instructors" class="lms-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Instructor Management</h2>
+                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Instructor</button>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="lms-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;"></div>
+                        <h3 style="margin-bottom: 0.5rem;">Prof. Ling Wei</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Senior Mandarin</p>
+                        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <span class="lms-badge secondary">5 Active Classes</span>
+                            <span class="lms-badge success">4.9/5 Rating</span>
+                        </div>
+                        <button class="btn btn-outline" style="width: 100%;">View Schedule</button>
+                    </div>
+                    <div class="lms-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;"></div>
+                        <h3 style="margin-bottom: 0.5rem;">Sophie Dubois</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">French Native Speaker</p>
+                        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <span class="lms-badge secondary">3 Active Classes</span>
+                            <span class="lms-badge success">4.8/5 Rating</span>
+                        </div>
+                        <button class="btn btn-outline" style="width: 100%;">View Schedule</button>
+                    </div>
+                    <div class="lms-card" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; background: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;"></div>
+                        <h3 style="margin-bottom: 0.5rem;">Carlos Garcia</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Spanish Linguist</p>
+                        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <span class="lms-badge secondary">6 Active Classes</span>
+                            <span class="lms-badge success">4.9/5 Rating</span>
+                        </div>
+                        <button class="btn btn-outline" style="width: 100%;">View Schedule</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: COURSE MANAGEMENT -->
+            <section id="admin-courses" class="lms-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Course Management</h2>
+                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create Course</button>
+                </div>
+                
+                <div class="lms-card">
+                    <div style="overflow-x: auto;">
+                        <table class="lms-datatable">
+                            <thead>
+                                <tr>
+                                    <th>Course Title</th>
+                                    <th>Language</th>
+                                    <th>Level</th>
+                                    <th>Enrolled</th>
+                                    <th>Status</th>
+                                    <th>Manage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Business Mandarin Basics</td>
+                                    <td>Mandarin</td>
+                                    <td>B1</td>
+                                    <td>450</td>
+                                    <td><span class="lms-badge success">Published</span></td>
+                                    <td><a href="#" style="color: var(--primary-color);">Edit Curriculum</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Travel Spanish Summer</td>
+                                    <td>Spanish</td>
+                                    <td>A1</td>
+                                    <td>120</td>
+                                    <td><span class="lms-badge warning">Draft</span></td>
+                                    <td><a href="#" style="color: var(--primary-color);">Edit Curriculum</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Advanced French Literature</td>
+                                    <td>French</td>
+                                    <td>C1</td>
+                                    <td>85</td>
+                                    <td><span class="lms-badge success">Published</span></td>
+                                    <td><a href="#" style="color: var(--primary-color);">Edit Curriculum</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: ATTENDANCE MONITORING -->
+            <section id="admin-attendance" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Global Attendance Monitoring</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+                    <div class="lms-card">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Today's Overview</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Present</strong> <span>88%</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 8px; border-radius: 4px;">
+                                <div style="width: 88%; background: #48bb78; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Absent</strong> <span>12%</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 8px; border-radius: 4px;">
+                                <div style="width: 12%; background: #e53e3e; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2rem;">Total Students Scheduled: 420</p>
+                    </div>
+                    
+                    <div class="lms-card">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">At-Risk Students (Below 70%)</h3>
+                        <div style="overflow-x: auto;">
+                            <table class="lms-datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Student</th>
+                                        <th>Course</th>
+                                        <th>Attendance</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>David Kim</td>
+                                        <td>French C1</td>
+                                        <td><span style="color: #e53e3e; font-weight: 700;">45%</span></td>
+                                        <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.8rem;">Send Warning</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emma Watson</td>
+                                        <td>Mandarin A1</td>
+                                        <td><span style="color: #ecc94b; font-weight: 700;">68%</span></td>
+                                        <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.8rem;">Send Warning</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: HOMEWORK REVIEW -->
+            <section id="admin-homework" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Homework Review</h2>
+                
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Needs Grading</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; background: var(--bg-primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; padding: 0; min-height: unset; border: none; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80') center/cover no-repeat;"></div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Alexander Chen - Business Proposal.pdf</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Mandarin B1 | Submitted: 2 hrs ago</p>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Grade Submission</button>
+                            </div>
+                        </div>
+                        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; background: var(--bg-primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; padding: 0; min-height: unset; border: none; background: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80') center/cover no-repeat;"></div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Sarah Miller - Vocab Worksheet.docx</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Spanish A2 | Submitted: 4 hrs ago</p>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Grade Submission</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: LIVE SCHEDULING -->
+            <section id="admin-live" class="lms-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Live Classroom Scheduling</h2>
+                    <button class="btn btn-primary"><i class="fa-solid fa-calendar-plus"></i> Schedule Session</button>
+                </div>
+                
+                <div class="lms-card">
+                    <div style="height: 400px; border-radius: 12px; background: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: CULTURAL EVENTS -->
+            <section id="admin-events" class="lms-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Cultural Event Management</h2>
+                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Event</button>
+                </div>
+                
+                <div class="lms-card">
+                    <div style="overflow-x: auto;">
+                        <table class="lms-datatable">
+                            <thead>
+                                <tr>
+                                    <th>Event Name</th>
+                                    <th>Date</th>
+                                    <th>Registrations</th>
+                                    <th>Capacity</th>
+                                    <th>Manage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Traditional Tea Ceremony</td>
+                                    <td>Sep 24, 2026</td>
+                                    <td>45</td>
+                                    <td>50</td>
+                                    <td><a href="#" style="color: var(--primary-color);">Edit Event</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Digital Calligraphy Basics</td>
+                                    <td>Sep 28, 2026</td>
+                                    <td>120</td>
+                                    <td>200</td>
+                                    <td><a href="#" style="color: var(--primary-color);">Edit Event</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: PLACEMENT TESTS -->
+            <section id="admin-placement" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Placement Test Administration</h2>
+                
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Pending Manual Review</h3>
+                    <div style="overflow-x: auto;">
+                        <table class="lms-datatable">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Target Language</th>
+                                    <th>Auto-Assigned Level</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Michael Chang</td>
+                                    <td>Mandarin</td>
+                                    <td>B2 (Borderline)</td>
+                                    <td><button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Review Exam</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Elena Rodriguez</td>
+                                    <td>French</td>
+                                    <td>A1</td>
+                                    <td><button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Review Exam</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: REPORTS & ANALYTICS -->
+            <section id="admin-reports" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Reports & Analytics</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                    <div class="lms-card" style="text-align: center;">
+                        <h3 style="margin-bottom: 1.5rem;">Revenue by Language Track</h3>
+                        <div style="height: 250px; border-radius: 12px; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                        </div>
+                    </div>
+                    <div class="lms-card" style="text-align: center;">
+                        <h3 style="margin-bottom: 1.5rem;">Student Retention Rate</h3>
+                        <div style="height: 250px; border-radius: 12px; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 11: SYSTEM SETTINGS -->
+            <section id="admin-settings" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">System Settings</h2>
+                
+                <div class="lms-card">
+                    <form style="max-width: 600px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">Global Configuration</h3>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Default Semester Duration</label>
+                            <input type="text" value="12 Weeks" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Maintenance Mode</label>
+                            <select style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                                <option selected>Off</option>
+                                <option>On - Show Maintenance Page</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" checked> Enable Automated Weekly Progress Reports for Students
+                            </label>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" style="padding: 0.8rem 2rem;">Save System Settings</button>
+                    </form>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

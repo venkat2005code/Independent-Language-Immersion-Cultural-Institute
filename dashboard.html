@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner Dashboard - Verve</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="overflow: hidden;"> <!-- Lock body scroll to enforce smooth scrolling inside dashboard-content -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-earth-americas"></i>
+            Verve<span>.</span>
+        </a>
+
+        <div class="header-actions">
+            <button class="sidebar-hamburger" id="dashboard-sidebar-toggle" aria-label="Toggle Sidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-right: 1rem;">
+                <div style="position: relative; cursor: pointer;">
+                    <i class="fa-regular fa-bell" style="font-size: 1.3rem; color: var(--text-secondary);"></i>
+                    <span style="position: absolute; top: -5px; right: -5px; background: #e53e3e; width: 10px; height: 10px; border-radius: 50%;"></span>
+                </div>
+                <div style="width: 1px; height: 20px; background: var(--border);"></div>
+                <div style="width: 40px; height: 40px; border-radius: 50%; padding: 0; min-height: unset; border: none; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                </div>
+                <span style="font-weight: 600; font-size: 0.95rem; color: var(--text-primary);">Alexander Chen</span>
+            </div>
+            
+            <button class="toggle-btn" id="dir-toggle" title="Toggle RTL/LTR">LTR</button>
+            <button class="toggle-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-target="overview"><i class="fa-solid fa-chart-pie"></i> Dashboard Overview</li>
+                <li class="sidebar-item" data-target="courses"><i class="fa-solid fa-book-open"></i> My Courses</li>
+                <li class="sidebar-item" data-target="attendance"><i class="fa-solid fa-calendar-check"></i> Attendance Tracker</li>
+                <li class="sidebar-item" data-target="homework"><i class="fa-solid fa-file-pdf"></i> Homework & Downloads</li>
+                <li class="sidebar-item" data-target="flashcards"><i class="fa-solid fa-layer-group"></i> Vocabulary Flashcards</li>
+                <li class="sidebar-item" data-target="live-classes"><i class="fa-solid fa-video"></i> Live Digital Classrooms</li>
+                <li class="sidebar-item" data-target="cultural-events"><i class="fa-solid fa-masks-theater"></i> Cultural Events</li>
+                <li class="sidebar-item" data-target="placement-test"><i class="fa-solid fa-spell-check"></i> Placement Test Results</li>
+                <li class="sidebar-item" data-target="progress"><i class="fa-solid fa-medal"></i> Progress & Certificates</li>
+                <li class="sidebar-item" data-target="notifications"><i class="fa-solid fa-bell"></i> Notifications</li>
+                <li class="sidebar-item" data-target="profile"><i class="fa-solid fa-user-gear"></i> Profile Settings</li>
+                <li class="sidebar-item" style="margin-top: 2rem; color: #e53e3e;"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            
+            <!-- SECTION 1: OVERVIEW -->
+            <section id="overview" class="lms-section" style="padding-top: 0;">
+                <div class="dashboard-header">
+                    <div>
+                        <h1 style="margin-bottom: 0.5rem;">Welcome back, Alexander!</h1>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">You are currently enrolled in <strong>Mandarin B1 - Intermediate (Business Track)</strong>.</p>
+                    </div>
+                    <a href="#live-classes" class="btn btn-primary" style="padding: 1rem 1.5rem;"><i class="fa-solid fa-play" style="margin-right: 8px;"></i> Join Next Live Class</a>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Course Completion</span>
+                        <span class="stat-value">68%</span>
+                        <div style="width: 100%; background: var(--bg-tertiary); height: 8px; border-radius: 4px; margin-top: 12px;">
+                            <div style="width: 68%; background: var(--primary-color); height: 100%; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Attendance Rate</span>
+                        <span class="stat-value">95%</span>
+                        <span style="font-size: 0.9rem; color: #48bb78; margin-top: 8px; font-weight: 600;"><i class="fa-solid fa-arrow-up"></i> Excellent Standing</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Next Deadline</span>
+                        <span class="stat-value" style="font-size: 2rem;">Tomorrow</span>
+                        <span style="font-size: 0.9rem; color: var(--accent-color); margin-top: 8px;">Business Email Translation</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Vocabulary Mastered</span>
+                        <span class="stat-value">1,204</span>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Words retained in LTM</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                    <div class="lms-card">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Activity</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(72, 187, 120, 0.1); color: #48bb78; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Homework Graded: Grammar Set 4</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Instructor Ling Wei gave you 95/100.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: var(--primary-glow); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-video"></i></div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Attended Live Session</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Conversational Practice - 1h 30m.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(236, 201, 75, 0.1); color: #ecc94b; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-masks-theater"></i></div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Registered for Event</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem;">Calligraphy Workshop on Saturday.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lms-card">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Instructor Contact</h3>
+                        <div style="text-align: center;">
+                            <div style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 1rem; background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                            </div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Prof. Ling Wei</h4>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">Senior Mandarin Instructor</p>
+                            <a href="mailto:ling@verve.edu" class="btn btn-outline" style="width: 100%;">Message</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: MY COURSES -->
+            <section id="courses" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">My Courses</h2>
+                
+                <div class="lms-card" style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px; height: 200px; border-radius: 16px; background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover no-repeat;">
+                    </div>
+                    <div style="flex: 2; min-width: 300px;">
+                        <span class="lms-badge primary" style="margin-bottom: 1rem;">Active</span>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Mandarin B1 - Intermediate (Business)</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">A 12-week intensive course focusing on business vocabulary, formal email writing, and negotiation etiquette in Mandarin.</p>
+                        <div style="display: flex; gap: 2rem;">
+                            <div>
+                                <span style="display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Duration</span>
+                                <strong>12 Weeks</strong>
+                            </div>
+                            <div>
+                                <span style="display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Format</span>
+                                <strong>Hybrid Digital</strong>
+                            </div>
+                            <div>
+                                <span style="display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">CEFR Level</span>
+                                <strong>B1</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Course Syllabus Progress</h3>
+                    <div style="overflow-x: auto;">
+                        <table class="lms-datatable">
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Topic</th>
+                                    <th>Status</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Week 1</td>
+                                    <td>Corporate Introductions</td>
+                                    <td><span class="lms-badge success">Completed</span></td>
+                                    <td>A-</td>
+                                </tr>
+                                <tr>
+                                    <td>Week 2</td>
+                                    <td>Scheduling & Logistics</td>
+                                    <td><span class="lms-badge success">Completed</span></td>
+                                    <td>B+</td>
+                                </tr>
+                                <tr>
+                                    <td>Week 3</td>
+                                    <td>Formal Emails & Memos</td>
+                                    <td><span class="lms-badge primary">In Progress</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Week 4</td>
+                                    <td>Negotiation Vocabulary</td>
+                                    <td><span class="lms-badge secondary">Locked</span></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: ATTENDANCE TRACKER -->
+            <section id="attendance" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Attendance Tracker</h2>
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                    <div class="lms-card">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Monthly Calendar View</h3>
+                        <div style="height: 400px; border-radius: 12px; background: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="lms-card" style="text-align: center;">
+                            <h3 style="margin-bottom: 1rem; color: var(--text-muted);">Current Streak</h3>
+                            <div style="font-size: 4rem; font-family: var(--font-heading); color: var(--primary-color);">12</div>
+                            <p style="color: var(--text-secondary);">Consecutive classes attended</p>
+                        </div>
+                        <div class="lms-card">
+                            <h3 style="margin-bottom: 1rem;">Participation Score</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">Based on mic/camera usage and interactive polls.</p>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Speaking Time</strong> <span>85%</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 6px; border-radius: 3px; margin-bottom: 1rem;">
+                                <div style="width: 85%; background: var(--accent); height: 100%; border-radius: 3px;"></div>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Poll Responses</strong> <span>100%</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 6px; border-radius: 3px;">
+                                <div style="width: 100%; background: #48bb78; height: 100%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: HOMEWORK & DOWNLOADS -->
+            <section id="homework" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Homework & Downloads</h2>
+                
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Pending Assignments</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="border: 1px solid var(--border); border-left: 4px solid #ecc94b; border-radius: 12px; padding: 1.5rem; background: var(--bg-primary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Draft a Business Proposal</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Write a 500-word proposal using the vocabulary from Week 3.</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <span class="lms-badge warning" style="margin-bottom: 0.5rem;">Due: Sep 15</span>
+                                <br>
+                                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Upload Document</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Course Materials Repository</h3>
+                    <div style="overflow-x: auto;">
+                        <table class="lms-datatable">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa-solid fa-file-pdf" style="color: #e53e3e; margin-right: 8px;"></i> Week 3 Grammar Reference</td>
+                                    <td>PDF</td>
+                                    <td>2.4 MB</td>
+                                    <td><a href="#" style="color: var(--primary-color); font-weight: 600;">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-file-audio" style="color: #4299e1; margin-right: 8px;"></i> Negotiation Listening Exercise</td>
+                                    <td>MP3</td>
+                                    <td>5.1 MB</td>
+                                    <td><a href="#" style="color: var(--primary-color); font-weight: 600;">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-file-powerpoint" style="color: #dd6b20; margin-right: 8px;"></i> Culture Presentation Deck</td>
+                                    <td>PPTX</td>
+                                    <td>8.7 MB</td>
+                                    <td><a href="#" style="color: var(--primary-color); font-weight: 600;">Download</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: VOCABULARY FLASHCARDS -->
+            <section id="flashcards" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Vocabulary Flashcards</h2>
+                
+                <div class="lms-card" style="text-align: center; padding: 4rem 2rem;">
+                    <div style="max-width: 600px; margin: 0 auto; perspective: 1000px;">
+                        <div style="background: var(--bg-primary); border: 2px solid var(--border); border-radius: 24px; padding: 4rem 2rem; box-shadow: var(--shadow-elevated); cursor: pointer; transition: transform 0.6s; transform-style: preserve-3d; position: relative;">
+                            <span style="position: absolute; top: 1rem; right: 1rem; color: var(--text-muted);"><i class="fa-solid fa-volume-high"></i></span>
+                            <h2 style="font-size: 4rem; font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem;">合同</h2>
+                            <p style="color: var(--text-muted); font-size: 1.2rem;">(hé tóng)</p>
+                            <p style="margin-top: 2rem; font-style: italic; color: var(--text-secondary); opacity: 0.5;">Click to reveal English translation</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+                        <button class="btn btn-outline" style="border-color: #f56565; color: #f56565;">Hard</button>
+                        <button class="btn btn-outline" style="border-color: #ecc94b; color: #ecc94b;">Good</button>
+                        <button class="btn btn-outline" style="border-color: #48bb78; color: #48bb78;">Easy</button>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="lms-card" style="padding: 1.5rem;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Business Travel</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">120 Cards</p>
+                        <div style="width: 100%; background: var(--bg-tertiary); height: 6px; border-radius: 3px; margin-bottom: 1rem;"><div style="width: 100%; background: #48bb78; height: 100%; border-radius: 3px;"></div></div>
+                        <span class="lms-badge success">Mastered</span>
+                    </div>
+                    <div class="lms-card" style="padding: 1.5rem;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Negotiations</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">85 Cards</p>
+                        <div style="width: 100%; background: var(--bg-tertiary); height: 6px; border-radius: 3px; margin-bottom: 1rem;"><div style="width: 45%; background: var(--primary-color); height: 100%; border-radius: 3px;"></div></div>
+                        <span class="lms-badge primary">Learning</span>
+                    </div>
+                    <div class="lms-card" style="padding: 1.5rem;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Dining Etiquette</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">50 Cards</p>
+                        <div style="width: 100%; background: var(--bg-tertiary); height: 6px; border-radius: 3px; margin-bottom: 1rem;"><div style="width: 0%; background: var(--primary-color); height: 100%; border-radius: 3px;"></div></div>
+                        <span class="lms-badge secondary">Not Started</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: LIVE DIGITAL CLASSROOMS -->
+            <section id="live-classes" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Live Digital Classrooms</h2>
+                
+                <div class="lms-card" style="background: var(--text-primary); color: var(--bg-primary); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                    <div>
+                        <span class="lms-badge" style="background: #e53e3e; color: white; border: none; margin-bottom: 1rem;"><i class="fa-solid fa-circle" style="font-size: 0.6rem;"></i> LIVE NOW</span>
+                        <h3 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--bg-primary);">Advanced Conversational Practice</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem;"><i class="fa-solid fa-chalkboard-user"></i> Prof. Ling Wei</p>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <div style="display: flex; margin-left: 10px;">
+                                <div style="width: 30px; height: 30px; border-radius: 50%; margin-left: -10px; border: 2px solid var(--text-primary); padding: 0; min-height: unset; background: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80') center/cover no-repeat;"></div>
+                                <div style="width: 30px; height: 30px; border-radius: 50%; margin-left: -10px; border: 2px solid var(--text-primary); padding: 0; min-height: unset; background: url('https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80') center/cover no-repeat;"></div>
+                                <div style="width: 30px; height: 30px; border-radius: 50%; margin-left: -10px; border: 2px solid var(--text-primary); padding: 0; min-height: unset; background: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80') center/cover no-repeat;"></div>
+                            </div>
+                            <span style="font-size: 0.9rem; color: var(--text-muted);">+ 5 classmates waiting</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1.2rem; box-shadow: 0 0 20px rgba(114, 47, 55, 0.5);">Join Classroom</button>
+                    </div>
+                </div>
+
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recorded Sessions Repository</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div>
+                            <div style="height: 150px; border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                                <i class="fa-solid fa-circle-play" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Week 2: Formal Intros</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Recorded Sep 1</p>
+                        </div>
+                        <div>
+                            <div style="height: 150px; border-radius: 12px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                                <i class="fa-solid fa-circle-play" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <h4 style="margin-bottom: 0.5rem;">Week 2: Q&A Session</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Recorded Sep 3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: CULTURAL EVENTS -->
+            <section id="cultural-events" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Cultural Events & Workshops</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                    <div class="lms-card" style="padding: 0; overflow: hidden;">
+                        <div style="height: 200px; border-radius: 0; border: none; border-bottom: 1px solid var(--border); background: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                        </div>
+                        <div style="padding: 2rem;">
+                            <span class="lms-badge warning" style="margin-bottom: 1rem;">Limited Spots</span>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Traditional Tea Ceremony</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Learn the vocabulary and strict etiquette of the Gongfu tea ceremony.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;"><i class="fa-regular fa-calendar"></i> Saturday, 3:00 PM (EST)</p>
+                            <button class="btn btn-outline" style="width: 100%;">Register Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="lms-card" style="padding: 0; overflow: hidden;">
+                        <div style="height: 200px; border-radius: 0; border: none; border-bottom: 1px solid var(--border); background: url('https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                        </div>
+                        <div style="padding: 2rem;">
+                            <span class="lms-badge primary" style="margin-bottom: 1rem;">Digital Workshop</span>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Digital Calligraphy Basics</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Using an iPad or tablet to practice stroke order and character history.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;"><i class="fa-regular fa-calendar"></i> Next Tuesday, 6:00 PM (EST)</p>
+                            <button class="btn btn-outline" style="width: 100%;">Register Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: PLACEMENT TEST RESULTS -->
+            <section id="placement-test" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Placement Test Results</h2>
+                
+                <div class="lms-card" style="display: flex; gap: 4rem; flex-wrap: wrap; align-items: center;">
+                    <div style="text-align: center; min-width: 200px;">
+                        <div style="width: 150px; height: 150px; border-radius: 50%; border: 10px solid var(--primary-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 3rem; font-family: var(--font-heading); color: var(--primary-color); font-weight: 800;">
+                            B1
+                        </div>
+                        <h3 style="font-size: 1.5rem;">Intermediate</h3>
+                        <p style="color: var(--text-muted);">CEFR Level</p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Skill Breakdown</h3>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Reading Comprehension</strong> <span>B2</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 8px; border-radius: 4px;">
+                                <div style="width: 75%; background: var(--primary-color); height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Listening</strong> <span>B1</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 8px; border-radius: 4px;">
+                                <div style="width: 50%; background: var(--accent); height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Speaking / Fluency</strong> <span>A2</span>
+                            </div>
+                            <div style="width: 100%; background: var(--bg-tertiary); height: 8px; border-radius: 4px;">
+                                <div style="width: 35%; background: #e53e3e; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; color: #e53e3e; margin-top: 0.5rem;">Recommendation: Focus heavily on conversational practice.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: PROGRESS & CERTIFICATES -->
+            <section id="progress" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Progress & Certificates</h2>
+                
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Earned Certificates</h3>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <div style="border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; background: var(--bg-primary); text-align: center; min-width: 250px;">
+                            <i class="fa-solid fa-certificate" style="font-size: 4rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Mandarin A2 - Elementary</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Issued: March 2025</p>
+                            <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">Download PDF</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lms-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Achievement Badges</h3>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div style="text-align: center; width: 100px;">
+                            <div style="width: 80px; height: 80px; background: var(--primary-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--primary-color); font-size: 2rem;">
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">10 Day Streak</span>
+                        </div>
+                        <div style="text-align: center; width: 100px;">
+                            <div style="width: 80px; height: 80px; background: rgba(72, 187, 120, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: #48bb78; font-size: 2rem;">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Perfect Score</span>
+                        </div>
+                        <div style="text-align: center; width: 100px; opacity: 0.3; filter: grayscale(1);">
+                            <div style="width: 80px; height: 80px; background: var(--bg-tertiary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--text-muted); font-size: 2rem;">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Chatterbox</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: NOTIFICATIONS -->
+            <section id="notifications" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Notifications</h2>
+                
+                <div class="lms-card" style="padding: 0;">
+                    <ul style="list-style: none;">
+                        <li style="padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; gap: 1.5rem; align-items: flex-start; background: rgba(114, 47, 55, 0.02);">
+                            <div style="width: 10px; height: 10px; background: var(--primary-color); border-radius: 50%; margin-top: 8px;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.3rem;">Class rescheduled</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.5rem;">Tomorrow's grammar workshop has been pushed back 30 minutes.</p>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">2 hours ago</span>
+                            </div>
+                        </li>
+                        <li style="padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div style="width: 10px; height: 10px; background: transparent; border-radius: 50%; margin-top: 8px;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.3rem;">Homework Graded</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.5rem;">Prof. Ling Wei graded your Business Proposal draft.</p>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">1 day ago</span>
+                            </div>
+                        </li>
+                        <li style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div style="width: 10px; height: 10px; background: transparent; border-radius: 50%; margin-top: 8px;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.3rem;">System Maintenance</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.5rem;">The digital classroom server will be undergoing maintenance on Sunday 2AM EST.</p>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">3 days ago</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 11: PROFILE SETTINGS -->
+            <section id="profile" class="lms-section">
+                <h2 style="margin-bottom: 2rem;">Profile Settings</h2>
+                
+                <div class="lms-card">
+                    <form style="max-width: 600px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">Personal Information</h3>
+                        
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div style="flex: 1;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name</label>
+                                <input type="text" value="Alexander" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                            </div>
+                            <div style="flex: 1;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name</label>
+                                <input type="text" value="Chen" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
+                            <input type="email" value="alex.chen@enterprise.com" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-tertiary); color: var(--text-muted); outline: none;" disabled>
+                        </div>
+
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; padding-top: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">Preferences</h3>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Target Language</label>
+                            <select style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); outline: none;">
+                                <option selected>Mandarin Chinese</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                                <option>Japanese</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" checked> Receive email notifications for graded assignments
+                            </label>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" style="padding: 0.8rem 2rem;">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
