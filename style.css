@@ -990,6 +990,20 @@ ul {
     .header { padding: 1rem 5%; }
 }
 
+/* --- 1024px Navbar Fix --- */
+@media (max-width: 1024px) {
+    .header { padding: 0.8rem 3%; }
+    .logo { font-size: 1.6rem; gap: 0.5rem; }
+    .logo i { font-size: 1.4rem; }
+    .logo span { font-size: 2rem; }
+    .nav-menu { gap: 1.2rem; }
+    .nav-item { font-size: 0.9rem; }
+    .header-actions { gap: 0.6rem; }
+    .header-actions .btn { padding: 0.45rem 0.9rem !important; font-size: 0.85rem !important; white-space: nowrap; }
+    .toggle-btn { width: 36px !important; height: 36px !important; font-size: 0.8rem !important; }
+}
+
+
 .hamburger {
     display: none;
     border: none;
