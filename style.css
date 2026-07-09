@@ -352,6 +352,30 @@ ul {
     transform: translateY(-3px);
 }
 
+/* Ghost button for dark hero backgrounds — white text always, both light & dark mode */
+.btn-hero-ghost,
+a.btn-hero-ghost,
+a.btn-hero-ghost:link,
+a.btn-hero-ghost:visited {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: none;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-hero-ghost:hover,
+a.btn-hero-ghost:hover {
+    background: rgba(255, 255, 255, 0.22) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(255, 255, 255, 0.12);
+}
+
 /* RTL Support */
 [dir="rtl"] { text-align: right; }
 [dir="rtl"] .dropdown-menu { left: auto; right: 50%; transform: translateX(50%) translateY(20px) scale(0.95); }
