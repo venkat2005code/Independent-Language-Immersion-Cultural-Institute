@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Verve</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <svg class="verve-logo-svg" width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#722f37" /><stop offset="100%" stop-color="#581845" /></linearGradient><linearGradient id="logo-accent" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c7a17a" /><stop offset="100%" stop-color="#a67c52" /></linearGradient></defs><path d="M50 10 A 40 40 0 1 0 90 50" fill="none" stroke="url(#logo-grad)" stroke-width="12" stroke-linecap="round"/><path d="M25 35 L50 85 L85 15" fill="none" stroke="url(#logo-accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Verve<span>.</span>
+        </a>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    Home <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="services.html">Services</a></li>
+                <li class="nav-item active"><a href="courses.html">Courses</a></li>
+                <li class="nav-item"><a href="blog.html">Blog</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item">
+                    Dashboards <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                    <div class="dropdown-menu">
+                        <a href="dashboard.html" class="dropdown-item">Learner Portal</a>
+                        <a href="admin.html" class="dropdown-item">Admin Portal</a>
+                    </div>
+                </li>
+
+                <li class="nav-item mobile-auth-btn" style="display: none; width: 100%; margin-top: 1rem; gap: 0.5rem;">
+                    <a href="sign-in.html" class="btn btn-outline"
+                        style="width: 100%; text-align: center; justify-content: center;">Sign In</a>
+                    <a href="sign-up.html" class="btn btn-primary"
+                        style="width: 100%; text-align: center; justify-content: center;">Apply Now</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="sign-in.html" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Sign
+                In</a>
+            <a href="sign-up.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Apply
+                Now</a>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button class="toggle-btn" id="dir-toggle" title="Toggle RTL/LTR">LTR</button>
+            <button class="toggle-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+        </div>
+    </header>
+    <main>
+        <!-- Section 1: Hero -->
+        <section style="padding-top: 10rem; padding-bottom: 5rem; text-align: center; background: var(--bg-secondary);">
+            <div style="max-width: 900px; margin: 0 auto; padding: 0 5%;">
+                <span
+                    style="color: var(--accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Our
+                    Programs</span>
+                <h1 class="hero-title" style="line-height: 1.1; margin: 1rem 0 2rem;">Master the Language. Master the
+                    World.</h1>
+                <p class="hero-subtitle" style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem;">
+                    From intensive summer camps to C-suite executive bootcamps, choose the path that best fits your
+                    global ambitions.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Core Philosophy -->
+        <section style="padding: 5rem 5%; text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Why Choose Verve Courses?</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;">All
+                    of our courses are built around our proprietary 'No-Textbook' philosophy. We guarantee full
+                    cognitive immersion from day one, forcing rapid adaptation and fluency through real-world
+                    situational practice.</p>
+
+                <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <i class="fa-solid fa-users"
+                            style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Small Classes</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Max 6 students per class.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <i class="fa-solid fa-chalkboard-user"
+                            style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Native Coaches</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Learn from certified locals.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <i class="fa-solid fa-certificate"
+                            style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Accredited</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Recognized globally.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Course Catalog -->
+        <section style="padding: 5rem 5%; background: var(--bg-secondary);">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 3rem; text-align: center;">Featured Courses</h2>
+
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                    <!-- Course 1 -->
+                    <div class="card" style="padding: 0; overflow: hidden; border-radius: 30px; display: flex; flex-wrap: wrap; align-items: stretch;">
+                        <div style="flex: 1; min-width: 300px; min-height: 300px; background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                        </div>
+                        <div style="flex: 2; min-width: 300px; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div>
+                                <span style="display: inline-block; padding: 0.4rem 1rem; background: var(--primary-glow); color: var(--primary-color); border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">Students</span>
+                            </div>
+                            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Semester Exchange Program</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Immerse yourself in a foreign university for a full semester. Benefit from 24/7 target language environments, host family stays, and guaranteed credit transfers.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="sign-up.html" class="btn btn-primary">Enroll Now</a>
+                                <a href="#" class="btn btn-outline">View Syllabus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="card" style="padding: 0; overflow: hidden; border-radius: 30px; display: flex; flex-wrap: wrap; align-items: stretch;">
+                        <div style="flex: 1; min-width: 300px; min-height: 300px; background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                        </div>
+                        <div style="flex: 2; min-width: 300px; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div>
+                                <span style="display: inline-block; padding: 0.4rem 1rem; background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">Corporate</span>
+                            </div>
+                            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Executive Language Bootcamp</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Intensive 4-week program designed for C-level executives relocating abroad. Master critical business terminology, presentation skills, and hierarchical communication.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="sign-up.html" class="btn btn-primary">Enroll Now</a>
+                                <a href="#" class="btn btn-outline">Request Brochure</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="card" style="padding: 0; overflow: hidden; border-radius: 30px; display: flex; flex-wrap: wrap; align-items: stretch;">
+                        <div style="flex: 1; min-width: 300px; min-height: 300px; background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+                        </div>
+                        <div style="flex: 2; min-width: 300px; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div>
+                                <span style="display: inline-block; padding: 0.4rem 1rem; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">Business</span>
+                            </div>
+                            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Cross-Cultural Negotiation</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">A masterclass in global deal-making. Learn to navigate high-stakes international negotiations, read nuanced non-verbal cues, and close deals across borders.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="sign-up.html" class="btn btn-primary">Enroll Now</a>
+                                <a href="#" class="btn btn-outline">View Curriculum</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Testimonials -->
+        <section style="padding: 5rem 5%;">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Student Success</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left;">
+                    <div class="card" style="padding: 2rem; border-radius: 20px;">
+                        <div
+                            style="display: flex; gap: 0.5rem; color: #f59e0b; margin-bottom: 1rem; font-size: 0.9rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
+                            "The Executive Bootcamp got me to B2 level Spanish in just 4 weeks. Incredible methodology."
+                        </p>
+                        <h4 style="margin-bottom: 0.2rem; font-size: 1rem;">James K.</h4>
+                    </div>
+                    <div class="card" style="padding: 2rem; border-radius: 20px;">
+                        <div
+                            style="display: flex; gap: 0.5rem; color: #f59e0b; margin-bottom: 1rem; font-size: 0.9rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p
+                            style="color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
+                            "My semester in Tokyo was life-changing thanks to the cultural anchoring techniques."</p>
+                        <h4 style="margin-bottom: 0.2rem; font-size: 1rem;">Amelia W.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: CTA / Enrollment -->
+        <section style="padding: 6rem 5%; background: var(--accent-gradient); color: white; text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Ready to Begin?</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2.5rem;">Take the free placement test today to
+                    discover which course fits your current proficiency level.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="sign-up.html" class="btn btn-white"
+                        style="padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600;">Take Placement Test</a>
+                    <a href="contact.html" class="btn btn-outline"
+                        style="border-color: rgba(255,255,255,0.5); color: white !important;">Speak with an Advisor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"
+        style="padding: 4rem 5% 2rem; background: var(--bg-elevated); border-top: 1px solid var(--border); box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.05); margin-top: auto;">
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+
+            <!-- Brand & About -->
+            <div>
+                <a href="index.html" class="logo" style="margin-bottom: 1.5rem; justify-content: flex-start;">
+                    <svg class="verve-logo-svg" width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#722f37" /><stop offset="100%" stop-color="#581845" /></linearGradient><linearGradient id="logo-accent" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c7a17a" /><stop offset="100%" stop-color="#a67c52" /></linearGradient></defs><path d="M50 10 A 40 40 0 1 0 90 50" fill="none" stroke="url(#logo-grad)" stroke-width="12" stroke-linecap="round"/><path d="M25 35 L50 85 L85 15" fill="none" stroke="url(#logo-accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Verve<span>.</span>
+                </a>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">Empowering global
+                    communication through immersive language and cultural education since 2005.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4
+                    style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">
+                    Quick Links</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4
+                    style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">
+                    Contact Us</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li><a href="mailto:hello@verve-institute.edu" class="footer-contact"><i
+                                class="fa-solid fa-envelope" style="color: var(--primary-color); width: 20px;"></i>
+                            hello@verve-institute.edu</a></li>
+                    <li><a href="tel:+442079460123" class="footer-contact"><i class="fa-solid fa-phone"
+                                style="color: var(--primary-color); width: 20px;"></i> +44 (0) 20 7946 0123</a></li>
+                    <li
+                        style="display: flex; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; padding: 0.2rem 0;">
+                        <i class="fa-solid fa-location-dot"
+                            style="color: var(--primary-color); margin-top: 4px; width: 20px;"></i> 15 Global Heritage
+                        Way<br>London, W1J 7BU, UK</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            style="max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Independent Language Immersion &
+                Cultural Institute. All rights reserved.</p>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
